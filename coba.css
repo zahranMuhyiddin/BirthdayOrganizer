@@ -1,0 +1,265 @@
+:root {
+    --pink: #f9a8d4;
+    --purple: #93C5FD;
+    --white: #ffffff;
+    --dark-purple: #6b5b95;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFFFF;
+    color: #1E293B;
+}
+
+.mynavbar {
+    background: rgb(167, 139, 250, 0.7);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+.hero {
+    background: linear-gradient(var(--purple), var(--pink));
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -5rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.buttons a {
+    background: #A78BFA;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.buttons a:hover {
+    background: #7C3AED;
+}
+
+.templates,
+.about,
+.edukasi,
+.rsvp,
+.faq {
+    padding: 60px 30px;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #F3F4F6;
+}
+
+.about h2 {
+    font-size: 2.3rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.about h2 span {
+    color: var(--pink);
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.6rem;
+}
+
+.templates h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1E293B;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 1rem;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.step h3 {
+    background-color: var(--purple);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    margin-top: 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-question {
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.faq-answer {
+    padding: 15px;
+    display: none;
+    background-color: var(--pink);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    background-color: var(--purple);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 68%;
+    }
+
+    .offcanvas-title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .mynavbar .nav-link {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+    html {
+        font-size: 58%;
+    }
+}

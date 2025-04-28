@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Organizer & Digital Invitation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Concert+One&family=League+Spartan:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- styles -->
+    <link rel="stylesheet" href="coba.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md sticky-top mynavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">BirthdayFun</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BirthdayFun</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#about">About Us</a>
+                        <a class="nav-link" href="#templates">Template</a>
+                        <a class="nav-link" href="#tutorial">Edukasi</a>
+                        <a class="nav-link" href="#rsvp">RSVP</a>
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Rayakan Harimu dengan Cara Spesial!</h1>
+        <p>Selamat datang di platform terbaik untuk mengelola acara ulang tahun dan membuat undangan digital yang
+            menawan.</p>
+        <div class="buttons">
+            <a href="#packages">Lihat Paket Kami</a>
+            <a href="#templates">Coba Undangan Digital</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2><span>Tentang</span> Kami</h2>
+
+        <div class="row">
+            <div class="about-img">
+                <img src="img/about.jpg" alt="Tentang Kami">
+            </div>
+            <div class="content">
+                <h3>Kenapa memilih kami?</h3>
+                <p>Kami adalah tim kreatif yang fokus membantu Anda membuat momen spesial menjadi lebih berkesan dengan
+                    layanan
+                    birthday organizer dan undangan digital personalisasi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- template Section -->
+    <section class="templates" id="templates">
+        <h2>Templates Terpopuler 🎨</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200.png?text=Template+1" alt="Template 1">
+                <p>Elegant Birthday</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200.png?text=Template+2" alt="Template 2">
+                <p>Colorful Party</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200.png?text=Template+3" alt="Template 3">
+                <p>Minimalist Style</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edukasi Section -->
+    <section id="edukasi" class="edukasi">
+        <h2>Bagaimana Cara Memesan?</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1</h3>
+                <p>Pilih layanan dan template.</p>
+            </div>
+            <div class="step">
+                <h3>2</h3>
+                <p>Isi form dan konfirmasi tanggal.</p>
+            </div>
+            <div class="step">
+                <h3>3</h3>
+                <p>Bayar dan nikmati layanan kami!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp">
+        <h2>RSVP & Konfirmasi Kehadiran</h2>
+        <p>Tonton video berikut untuk memahami cara RSVP undangan digitalmu!</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Bagaimana cara memesan?</button>
+                <div class="faq-answer">Pilih layanan, isi form, lakukan pembayaran, dan tim kami siap membantu!</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Bisa pilih tema undangan sendiri?</button>
+                <div class="faq-answer">Tentu! Kami menyediakan banyak pilihan tema atau buat custom.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Berapa lama pembuatan undangan?</button>
+                <div class="faq-answer">Biasanya 1-2 hari kerja setelah semua detail dikonfirmasi.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 BirthdayWhiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+    </script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
