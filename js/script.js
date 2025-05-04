@@ -15,6 +15,19 @@ document.addEventListener('click', function (e) {
 })
 
 
+// LOGIN FUNCTION YAHHHH INGAT!!!
+const loginBtn = document.getElementById('loginBtn');
+const loginModal = document.getElementById('loginModal');
+
+loginBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    loginModal.style.display = 'flex';
+});
+
+function closeLoginModal(event) {
+    loginModal.style.display = 'none';
+}
+
 
 
 
