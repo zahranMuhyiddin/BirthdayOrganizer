@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BirthdayWhiz - Organizer & Digital Invitation</title>
+    <link rel="stylesheet" href="coba2.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">BirthdayWhiz</div>
+        <div class="nav-links">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#about">About Us</a>
+            <a class="nav-link" href="#templates">Template</a>
+            <a class="nav-link" href="#tutorial">Edukasi</a>
+            <a class="nav-link" href="#rsvp">RSVP</a>
+            <a class="nav-link" href="#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section home">
+        <div class="hero-content">
+            <h1>Celebrate Moments with Us 🎉</h1>
+            <p>Birthday Organizer & Digital Invitation in One Place!</p>
+            <a href="#template" class="btn-primary">Lihat Template</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <h2>About Us</h2>
+        <p>Kami menghadirkan pengalaman ulang tahun yang tak terlupakan dengan layanan Organizer & Digital Invitation
+            modern, fleksibel, dan penuh warna!</p>
+        <img src="https://source.unsplash.com/400x300/?birthday,party" alt="About Us Image" class="about-image">
+    </section>
+
+    <!-- Template Section -->
+    <section id="template" class="section template">
+        <h2>Templates Terpopuler 🎨</h2>
+        <div class="template-gallery">
+            <div class="template-item">Template 1</div>
+            <div class="template-item">Template 2</div>
+            <div class="template-item">Template 3</div>
+            <div class="template-item">Template 4</div>
+        </div>
+    </section>
+
+    <!-- Edukasi Section -->
+    <section id="edukasi" class="section edukasi">
+        <h2>Bagaimana Cara Memesan?</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1</h3>
+                <p>Pilih layanan dan template.</p>
+            </div>
+            <div class="step">
+                <h3>2</h3>
+                <p>Isi form dan konfirmasi tanggal.</p>
+            </div>
+            <div class="step">
+                <h3>3</h3>
+                <p>Bayar dan nikmati layanan kami!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="section rsvp">
+        <h2>RSVP & Konfirmasi Kehadiran</h2>
+        <p>Tonton video berikut untuk memahami cara RSVP undangan digitalmu!</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">Bagaimana cara memesan?</button>
+                <div class="faq-answer">Pilih layanan, isi form, lakukan pembayaran, dan tim kami siap membantu!</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Bisa pilih tema undangan sendiri?</button>
+                <div class="faq-answer">Tentu! Kami menyediakan banyak pilihan tema atau buat custom.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Berapa lama pembuatan undangan?</button>
+                <div class="faq-answer">Biasanya 1-2 hari kerja setelah semua detail dikonfirmasi.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 BirthdayWhiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
