@@ -1,0 +1,381 @@
+:root {
+    --pink: #f9a8d4;
+    --purple: #93C5FD;
+    --white: #ffffff;
+    --primary: #544180;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFFFF;
+    color: #1E293B;
+}
+
+/* navbar mulai dari sini yah zahran */
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(175, 146, 241, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: #4c3e72;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    font-weight: 400;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.8);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra .login {
+    background-color: white;
+    color: var(--primary);
+    padding: 0.7rem;
+    border-radius: 10px;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-extra .login:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+#hamburger-menu {
+    color: white;
+    font-size: 1.8rem;
+    display: none;
+    padding-right: 1.5rem;
+}
+
+#daftarBtn {
+    display: none;
+}
+
+/* Login */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: start;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    top: -100%;
+    opacity: 0;
+    margin-top: 100px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px;
+    height: 370px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: top 0.5s ease, opacity 0.5s ease;
+    text-align: center;
+}
+
+/* Class saat modal aktif */
+.modal-overlay.show .modal-content {
+    top: 0;
+    opacity: 1;
+    margin-top: 150px;
+}
+
+
+.modal-overlay .modal-content h2 {
+    padding-top: 7px;
+    font-size: 3rem;
+}
+
+
+.modal-overlay .modal-content form {
+    padding-right: 20px;
+}
+
+.modal-overlay .modal-content form button:hover {
+    background-color: #211442;
+}
+
+/* form */
+
+form {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 5rem;
+}
+
+form .form-control,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+form .form-control:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgb(84, 65, 128, 0.25);
+}
+
+form button {
+    background-color: var(--primary);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+/* ------------------------------------------ */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.register-container {
+    display: flex;
+    gap: 60px;
+    margin-top: 6rem;
+}
+
+.register-container .register-form {
+    max-width: 400px;
+}
+
+.register-container .register-form h2 {
+    margin-bottom: 10px;
+}
+
+.register-container .register-form .role-buttons {
+    margin-bottom: 15px;
+}
+
+.register-container .register-form .role-buttons button {
+    border: none;
+    margin-right: 5px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#indi {
+    background-color: var(--primary);
+    color: white;
+}
+
+#vendor {
+    background-color: #e6e6e6;
+    color: var(--primary);
+}
+
+.register-container .register-form .form-section {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.register-container .register-form .form-section input {
+    margin-right: 5px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.register-container .register-form .terms {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.register-container .register-form .btn-submit {
+    width: 100%;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    padding: 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.register-container .register-form .google-btn {
+    width: 100%;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 10px;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: 500;
+}
+
+.register-container .register-form .login-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.register-container .register-form .login-link a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 75%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: white;
+        width: 26rem;
+        height: 100vh;
+        transition: 0.4s;
+    }
+
+    .navbar .navbar-nav.active {
+        left: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: #211442;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.7rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.4);
+    }
+
+    form {
+        flex: 100%;
+    }
+
+    form {
+        padding-right: 0rem;
+    }
+
+    .modal-content {
+        width: 75%;
+        height: 300px;
+    }
+
+    .modal-overlay .modal-content form {
+        padding-right: 50px;
+    }
+
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+    html {
+        font-size: 53%;
+    }
+
+}

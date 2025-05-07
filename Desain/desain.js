@@ -38,22 +38,27 @@ document.addEventListener('click', function (e) {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".categories button");
+    const cards = document.querySelectorAll(".preset-card");
 
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Set active button
+            buttons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
 
+            const filter = button.getAttribute("data-filter");
 
-
-
-
-// jawaban faq
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-        } else {
-            answer.style.display = 'block';
-        }
+            cards.forEach(card => {
+                const category = card.getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
     });
 });
+

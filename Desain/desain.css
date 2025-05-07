@@ -1,0 +1,370 @@
+:root {
+    --pink: #f9a8d4;
+    --purple: #93C5FD;
+    --white: #ffffff;
+    --primary: #544180;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFFFF;
+    color: #1E293B;
+}
+
+/* navbar mulai dari sini yah zahran */
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(175, 146, 241, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: #4c3e72;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    font-weight: 400;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.8);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra .login {
+    background-color: white;
+    color: var(--primary);
+    padding: 0.7rem;
+    border-radius: 10px;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-extra .login:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+#hamburger-menu {
+    color: white;
+    font-size: 1.8rem;
+    display: none;
+    padding-right: 1.5rem;
+}
+
+.navbar .navbar-nav .undangan {
+    color: var(--primary);
+}
+
+/* Login */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: start;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    top: -100%;
+    opacity: 0;
+    margin-top: 100px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px;
+    height: 370px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: top 0.5s ease, opacity 0.5s ease;
+    text-align: center;
+}
+
+/* Class saat modal aktif */
+.modal-overlay.show .modal-content {
+    top: 0;
+    opacity: 1;
+    margin-top: 150px;
+}
+
+
+.modal-overlay .modal-content h2 {
+    padding-top: 7px;
+    font-size: 3rem;
+}
+
+
+.modal-overlay .modal-content form {
+    padding-right: 20px;
+}
+
+.modal-overlay .modal-content form button:hover {
+    background-color: #211442;
+}
+
+/* form */
+
+form {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 5rem;
+}
+
+form .form-control,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+form .form-control:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgb(84, 65, 128, 0.25);
+}
+
+form button {
+    background-color: var(--primary);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+/* ---------------------------- */
+
+.hero {
+    margin-top: 7rem;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 2em;
+}
+
+.hero .highlight {
+    color: var(--pink);
+    font-weight: bold;
+}
+
+.categories {
+    margin-top: 20px;
+}
+
+.categories button {
+    margin: 5px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.categories .active {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.presets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.preset-card {
+    width: 200px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.preset-card img {
+    width: 100%;
+    height: auto;
+}
+
+.badge {
+    display: block;
+    background-color: var(--primary);
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.8em;
+}
+
+.contoh {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contoh .preset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+.contoh .preset .preset-card {
+    width: 200px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contoh .preset .preset-card a {
+    color: var(--primary);
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 75%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: white;
+        width: 26rem;
+        height: 100vh;
+        transition: 0.4s;
+    }
+
+    .navbar .navbar-nav.active {
+        left: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: #211442;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.7rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.4);
+    }
+
+    form {
+        flex: 100%;
+    }
+
+    form {
+        padding-right: 0rem;
+    }
+
+    .modal-content {
+        width: 75%;
+        height: 300px;
+    }
+
+    .modal-overlay .modal-content form {
+        padding-right: 50px;
+    }
+
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+    html {
+        font-size: 53%;
+    }
+
+}

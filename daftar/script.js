@@ -37,23 +37,18 @@ document.addEventListener('click', function (e) {
 });
 
 
+const btnIndi = document.querySelector('#indi');
+const btnVendor = document.querySelector('#vendor');
 
-
-
-
-
-
-
-// jawaban faq
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-        } else {
-            answer.style.display = 'block';
-        }
-    });
-});
+btnVendor.onclick = () => {
+    btnIndi.style.background = '#e6e6e6';
+    btnIndi.style.color = '#544180';
+    btnVendor.style.background = '#544180';
+    btnVendor.style.color = '#e6e6e6';
+}
+btnIndi.onclick = () => {
+    btnVendor.style.background = '#e6e6e6';
+    btnVendor.style.color = '#544180';
+    btnIndi.style.background = '#544180';
+    btnIndi.style.color = '#e6e6e6';
+}
