@@ -36,7 +36,7 @@ document.addEventListener('click', function (e) {
     }
 });
 
-
+// 
 
 document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll(".categories button");
