@@ -1,0 +1,434 @@
+ :root {
+     --choco: #7a614e;
+     --bg: #0a0a0a;
+     --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+ }
+
+
+ body {
+     font-size: 1.2rem;
+     font-family: "Work Sans", sans-serif;
+     min-height: 4000px;
+ }
+
+ .hero ::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url(img/bghome.jpg);
+     background-size: cover;
+     background-position: center;
+     z-index: -1;
+     filter: brightness(30%);
+ }
+
+
+ .hero {
+     position: relative;
+     min-height: 100vh;
+ }
+
+ .hero h1,
+ .hero h4,
+ .hero p {
+     text-shadow: var(--shadow);
+ }
+
+ .hero h1 {
+     font-family: "Sacramento", cursive;
+     font-size: 6rem;
+     color: #fff6db;
+     padding-top: 2rem;
+     padding-bottom: 1rem;
+ }
+
+ .hero h4 {
+     font-size: 1.6rem;
+     color: #fff6db
+ }
+
+ .hero p {
+     font-size: 1, 2rem;
+     color: #fff6db;
+     padding-bottom: 1rem;
+ }
+
+ .hero a,
+ .info a {
+     color: #47382d;
+     background-color: white;
+     box-shadow: var(--shadow);
+ }
+
+ .hero a:hover {
+     background-color: var(--choco);
+     color: white;
+ }
+
+ .mynavbar {
+     background-color: rgba(255, 255, 255, 0.4) !important;
+ }
+
+ .mynavbar .offcanvas {
+     height: 100vh;
+ }
+
+ .mynavbar .navbar-brand,
+ .mynavbar .offcanvas-title {
+     font-family: 'Sacramento', cursive;
+     font-size: 2.5rem;
+     font-weight: bold;
+ }
+
+ .mynavbar .nav-link {
+     text-transform: uppercase;
+ }
+
+ .sticky-top {
+     overflow: hidden;
+ }
+
+ .home {
+     background-image: url(img/bg.jpg);
+     background-size: cover;
+     min-height: 100vh;
+     margin-top: -5rem;
+     padding-top: 8rem;
+     padding-bottom: 5rem;
+ }
+
+ .home h2 {
+     color: var(--choco);
+     font-family: 'Sacramento';
+     font-size: 5rem;
+     font-weight: bold;
+ }
+
+ .home h3 {
+     color: #444;
+     font-size: 1.5rem;
+     margin-bottom: 1rem;
+ }
+
+ .home p {
+     font-size: 1.1rem;
+     color: #666;
+ }
+
+ .home .couple {
+     margin-top: 100px;
+ }
+
+ .home .couple h3 {
+     font-family: 'Sacramento';
+     font-size: 4rem;
+     color: var(--choco);
+     padding-top: 1rem;
+ }
+
+ .home .couple img {
+     width: 300px;
+ }
+
+ .info {
+     background-color: #f9eddf;
+     color: var(--bg);
+     padding-top: 8rem;
+     padding-bottom: 8rem;
+ }
+
+ .info h2 {
+     color: var(--choco);
+     font-family: 'sacramento';
+     font-size: 5rem;
+     font-weight: bold;
+ }
+
+ .info .alamat {
+     font-size: 1.1rem;
+ }
+
+ .info .description {
+     font-size: 0.9rem;
+     font-weight: 400;
+ }
+
+ .info .card {
+     background-color: white !important;
+     color: var(--bg) !important;
+     border: 1px solid #999;
+ }
+
+ .info .card-header {
+     border-bottom: 1px solid #999;
+     text-transform: uppercase;
+     letter-spacing: 1rem;
+ }
+
+ .info .card-body {
+     font-size: 1rem;
+ }
+
+ .info .card-footer {
+     border-top: 1px solid #999;
+     font-size: 0.9rem;
+     font-weight: 300;
+ }
+
+ .gallery {
+     background-color: #f9eddf;
+     padding-top: 8rem;
+     padding-bottom: 8rem;
+ }
+
+ .gallery h2 {
+     font-family: 'sacramento';
+     font-size: 4.5rem;
+     font-weight: 600;
+     color: #47382d;
+ }
+
+ .rsvp {
+     background-color: #413126;
+     color: white;
+     padding-top: 8rem;
+     padding-bottom: 8rem;
+ }
+
+ .rsvp h2 {
+     color: #f9eddf;
+     font-family: 'sacramento';
+     font-size: 4.2rem;
+     font-weight: bold;
+ }
+
+ .rsvp p {
+     font-size: 1rem;
+     font-weight: 300;
+     margin-bottom: 1rem;
+ }
+
+
+ .rsvp button {
+     background-color: var(--choco);
+     color: white;
+     border: 1px solid var(--choco);
+ }
+
+ .rsvp button:hover {
+     background-color: white;
+     color: var(--choco);
+     border: 1px solid white;
+ }
+
+ .gifts h2 {
+     font-family: 'sacramento';
+     font-size: 4.5rem;
+     font-weight: 600;
+     color: #47382d;
+ }
+
+ .gifts {
+     background-color: #f9eddf;
+     padding-top: 8rem;
+     padding-bottom: 8rem;
+ }
+
+ .gifts span {
+     text-transform: uppercase;
+     font-size: 0.9rem;
+     letter-spacing: 1px;
+     display: block;
+ }
+
+ .gifts .elementor-button {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     padding: 1rem;
+     background-color: var(--choco);
+     color: white;
+     font-weight: 500;
+     font-size: 14px;
+     border: none;
+     border-radius: 8px;
+     text-decoration: none;
+     transition: background-color 0.3s ease;
+ }
+
+ .gifts .elementor-button:hover {
+     background-color: white;
+     color: var(--choco);
+     /* Warna saat hover */
+ }
+
+ .gifts .elementor-button-icon {
+     margin-right: 8px;
+ }
+
+ .gifts .elementor-button-text {
+     white-space: nowrap;
+ }
+
+ .gifts .copy-content {
+     padding: 1rem;
+ }
+
+
+ .gifts p {
+     color: var(--bg);
+     font-size: 1rem;
+     font-weight: 300;
+     margin-bottom: 1rem;
+ }
+
+ .gifts .card {
+     background-color: white !important;
+     color: var(--bg) !important;
+     border: 1px solid #999;
+     box-shadow: var(--shadow);
+ }
+
+ .gifts .card-header {
+     background-color: white;
+     border-bottom: white;
+     text-transform: uppercase;
+     letter-spacing: 1rem;
+ }
+
+ .gifts .card-header img {
+     border: white;
+ }
+
+ .gifts .card-header span {
+     letter-spacing: 0rem;
+ }
+
+ footer {
+     padding: 1.5rem;
+     background-color: #413126;
+     color: white;
+ }
+
+ footer a {
+     color: #978774;
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+
+ footer a:hover {
+     color: white;
+ }
+
+ footer li {
+     margin: 0.5rem;
+     list-style: none;
+     display: inline;
+ }
+
+ .audio-icon-wrapper {
+     width: 4rem;
+     height: 4rem;
+     font-size: 4rem;
+     position: fixed;
+     bottom: 2.5rem;
+     right: 2rem;
+     cursor: pointer;
+     color: white;
+     opacity: 50%;
+     mix-blend-mode: difference;
+     animation: rotating 4s linear infinite;
+     transform-origin: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     line-height: 0;
+ }
+
+
+ @keyframes rotating {
+     from {
+         transform: rotate(0);
+     }
+
+     to {
+         transform: rotate(1turn);
+     }
+ }
+
+ /* Media Query */
+ /* laptop */
+ @media (max-width: 992px) {
+     html {
+         font-size: 75%;
+     }
+
+     .simply-countdown>.simply-section {
+         padding: 55px;
+     }
+
+ }
+
+ /* Tablet */
+ @media (max-width: 768px) {
+     html {
+         font-size: 65%;
+     }
+
+     .simply-countdown>.simply-section {
+         padding: 45px;
+         margin: 5px;
+     }
+
+     .mynavbar .nav-link {
+         text-transform: uppercase;
+         font-size: 2rem;
+         text-align: center;
+     }
+ }
+
+ /* mobile phone */
+ @media (max-width: 576px) {
+     html {
+         font-size: 55%;
+     }
+
+     .hero h1 {
+         font-size: 4.8rem;
+     }
+
+     .simply-countdown>.simply-section {
+         width: 50px;
+         height: 50px;
+         padding: 25px;
+         margin: 3px;
+     }
+
+     .home {
+         margin-top: -6rem;
+     }
+
+     .home p {
+         padding-bottom: 2rem;
+     }
+
+     .home .couple h3 {
+         font-size: 3.2rem;
+     }
+
+     .home .couple img {
+         width: 220px;
+     }
+
+     .gifts img {
+         width: 20%;
+     }
+
+     .gifts .img-gift {
+         width: 10% !important;
+     }
+ }
