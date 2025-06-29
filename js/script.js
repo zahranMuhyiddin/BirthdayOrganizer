@@ -2,11 +2,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem("token");
     const username = localStorage.getItem("username");
 
-    if (!token) {
-        // Jika tidak ada token, redirect ke login
-        window.location.href = "/";
-    } else {
-        // ✅ Jika ada token, bisa lanjut akses halaman
+    const currentPage = window.location.pathname;
+    console.log("TOKEN SAAT HALAMAN DIMUAT:", token);
+
+    // Jika tidak ada token DAN bukan di halaman login, redirect ke login
+    if (!token && !currentPage.includes("/User/Admin/index.html") && currentPage !== "/") {
+        window.location.href = "/"; // atau sesuai nama file login-mu
+
+    } else if (token) {
         console.log("Token tersedia. User login sebagai:", username);
     }
 });
@@ -74,27 +77,27 @@ fetch("/navbar.html")
                 const result = await response.json();
 
                 if (response.ok) {
-                    localStorage.setItem('token', result.token);
-                    localStorage.setItem('username', result.username);
+                    // Login berhasil
+                    localStorage.setItem('token', result.token); // Simpan token
+                    localStorage.setItem('username', result.token);
+                    localStorage.setItem('role', result.user.role); // Simpan role user
 
-                    alert('Login berhasil!');
-                    loginModal.classList.remove('show');
-                    setTimeout(() => {
-                        loginModal.style.display = 'none';
-                    }, 400);
+                    localStorage.setItem('userNama', result.user.nama);
+                    localStorage.setItem('userUsername', result.user.username);
+                    localStorage.setItem('userEmail', result.user.email);
+                    localStorage.setItem('userNoHP', result.user.noHP); // Simpan noHP
+                    localStorage.setItem('userId', result.user.id);
 
-                    document.getElementById("nav-auth").style.display = "none";
-                    document.getElementById("nav-user").style.display = "flex";
-                    document.getElementById("username-display").textContent = result.username;
+                    alert('Login berhasil! Selamat datang, ' + result.user.username);
+                    // Arahkan ke halaman admin jika role admin, atau halaman lain
+                    if (result.user.role === 'admin') {
+                        window.location.href = '/User/Admin/index.html'; // Arahkan ke halaman paket
+                    } else {
+                        window.location.href = '/'; // Arahkan ke halaman user biasa
+                    }
 
-                    document.getElementById("logoutBtn").addEventListener("click", () => {
-                        localStorage.clear();
-                        window.location.href = "/"; // atau halaman login
-                    });
                 } else {
                     alert(result.message || 'Login gagal');
-                    document.getElementById("nav-auth").style.display = "flex";
-                    document.getElementById("nav-user").style.display = "none";
                 }
             } catch (err) {
                 alert('Terjadi kesalahan: ' + err.message);
@@ -148,32 +151,36 @@ fetch("/navbar.html")
 // -------------------------------------------------------------------
 
 // setelah login--------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("token");
-    const username = localStorage.getItem("username");
-
-    if (token && username) {
-        document.getElementById("nav-auth").style.display = "none";
-        document.getElementById("nav-user").style.display = "flex";
-        document.getElementById("username-display").textContent = username;
-
-        // Logout
-        document.getElementById("logoutBtn").addEventListener("click", () => {
-            localStorage.clear();
-            window.location.href = "index.html"; // atau halaman login
-        });
-    } else {
-        document.getElementById("nav-auth").style.display = "flex";
-        document.getElementById("nav-user").style.display = "none";
-        if (!localStorage.getItem("token")) {
-            window.location.href = "index.html";
-        }
-    }
-});
 
 // -------------------------------------------------------------------
 
+document.addEventListener("DOMContentLoaded", () => {
+    // ... (kode Anda yang sudah ada, misalnya deklarasi BASE_API_URL, role, token, dll.) ...
 
+    // Ambil elemen tombol Logout
+    const logoutButton = document.getElementById("logoutButton");
+
+    // Pastikan tombol logout ditemukan sebelum menambahkan event listener
+    if (logoutButton) {
+        logoutButton.addEventListener("click", (event) => {
+            event.preventDefault(); // Mencegah link berpindah halaman secara default
+
+            // Hapus token dan role dari localStorage
+            localStorage.removeItem("token");
+            localStorage.removeItem("role");
+
+            // Opsional: berikan notifikasi ke pengguna
+            alert("Anda telah berhasil logout.");
+
+            // Redirect ke halaman login atau halaman utama
+            // Sesuaikan dengan path halaman login Anda yang sebenarnya
+            window.location.href = "/";
+        });
+    }
+
+    // ... (sisa kode Anda untuk loadPaketData, loadVendorData, event listener edit/hapus, dll.) ...
+
+}); // End of DOMContentLoaded
 
 // desain
 document.addEventListener("DOMContentLoaded", function () {

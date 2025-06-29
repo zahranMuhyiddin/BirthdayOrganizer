@@ -1,0 +1,489 @@
+:root {
+    --pink: #f9a8d4;
+    --purple: #93C5FD;
+    --white: #ffffff;
+    --primary: #544180;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFFFF;
+    color: #1E293B;
+}
+
+/* navbar mulai dari sini yah zahran */
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(175, 146, 241, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: #4c3e72;
+}
+
+.navbar .navbar-nav a {
+    color: white;
+    display: inline-block;
+    font-size: 1.1rem;
+    margin: 0 1rem;
+    font-weight: 400;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.8);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra .login {
+    background-color: white;
+    color: var(--primary);
+    padding: 0.7rem;
+    border-radius: 10px;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-extra .login:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+#hamburger-menu {
+    color: white;
+    font-size: 1.8rem;
+    display: none;
+    padding-right: 1.5rem;
+}
+
+.navbar .navbar-nav .paket {
+    color: var(--primary);
+}
+
+
+/* form */
+
+form {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 5rem;
+}
+
+form .form-control,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+form .form-control:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgb(84, 65, 128, 0.25);
+}
+
+form button {
+    background-color: var(--primary);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+/* pakeetttttttt */
+.paket-ultah {
+    margin-top: 5rem;
+    padding: 60px 0;
+    background: #F3F4F6;
+}
+
+.paket-ultah .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.paket-ultah .col {
+    flex: 1 1 220px;
+    max-width: 320px;
+}
+
+.paket-ultah .paket-title {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.paket-ultah .paket-title h1 {
+    font-family: 'Chewy', cursive;
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.paket-ultah .paket-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary);
+    margin: 15px auto;
+}
+
+.paket-ultah .row .card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.paket-ultah .row .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.paket-ultah .row .card .card-body {
+    padding: 25px;
+}
+
+.paket-ultah .row .card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+
+.btn {
+    background-color: #00b894;
+    color: white;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #019875;
+}
+
+.paket-vendor {
+    padding: 60px 0;
+    background: #F3F4F6;
+}
+
+.paket-vendor .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.paket-vendor .col {
+    flex: 1 1 220px;
+    max-width: 320px;
+}
+
+.paket-vendor .paket-title {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.paket-vendor .paket-title h1 {
+    font-family: 'Chewy', cursive;
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.paket-vendor .paket-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary);
+    margin: 15px auto;
+}
+
+.paket-vendor .row .card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.paket-vendor .row .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.paket-vendor .row .card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.paket-vendor .row .card .card-body {
+    padding: 25px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.modal.show {
+    opacity: 1;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Center the modal content */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be responsive */
+    max-width: 500px; /* Max width for larger screens */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styling within Modal */
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="number"],
+.modal-content form textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.modal-content form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 80px;
+}
+
+.modal-content form button[type="submit"] {
+    background-color: #544180; /* Warna tombol sesuai tema Anda */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #6a539c; /* Warna hover */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+
+.footer {
+    background-color: #0f0722;
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+
+    .hero .row .hero-img img {
+        width: 85%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 75%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: white;
+        width: 26rem;
+        height: 100vh;
+        transition: 0.4s;
+    }
+
+    .navbar .navbar-nav.active {
+        left: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: #211442;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.7rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.4);
+    }
+
+    form {
+        flex: 100%;
+    }
+
+    form {
+        padding-right: 0rem;
+    }
+
+    .modal-content {
+        width: 75%;
+        height: 300px;
+    }
+
+    .modal-overlay .modal-content form {
+        padding-right: 50px;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+    html {
+        font-size: 53%;
+    }
+
+}

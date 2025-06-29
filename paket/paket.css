@@ -108,59 +108,6 @@ body {
     color: var(--primary);
 }
 
-/* Login */
-
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    justify-content: center;
-    align-items: start;
-    z-index: 9999;
-    overflow-y: auto;
-}
-
-.modal-content {
-    position: relative;
-    top: -100%;
-    opacity: 0;
-    margin-top: 100px;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 350px;
-    height: 370px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: top 0.5s ease, opacity 0.5s ease;
-    text-align: center;
-}
-
-/* Class saat modal aktif */
-.modal-overlay.show .modal-content {
-    top: 0;
-    opacity: 1;
-    margin-top: 150px;
-}
-
-
-.modal-overlay .modal-content h2 {
-    padding-top: 7px;
-    font-size: 3rem;
-}
-
-
-.modal-overlay .modal-content form {
-    padding-right: 20px;
-}
-
-.modal-overlay .modal-content form button:hover {
-    background-color: #211442;
-}
 
 /* form */
 
@@ -344,6 +291,102 @@ form button {
 
 .paket-vendor .row .card .card-body {
     padding: 25px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.modal.show {
+    opacity: 1;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto; /* Center the modal content */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be responsive */
+    max-width: 500px; /* Max width for larger screens */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styling within Modal */
+.modal-content form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="number"],
+.modal-content form textarea {
+    width: calc(100% - 20px); /* Adjust for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.modal-content form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 80px;
+}
+
+.modal-content form button[type="submit"] {
+    background-color: #544180; /* Warna tombol sesuai tema Anda */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content form button[type="submit"]:hover {
+    background-color: #6a539c; /* Warna hover */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
 }
 
 

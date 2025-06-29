@@ -1,0 +1,629 @@
+:root {
+    --pink: #f9a8d4;
+    --purple: #93C5FD;
+    --white: #ffffff;
+    --primary: #544180;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #FFFFFF;
+    color: #1E293B;
+}
+
+
+
+/* Login */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: start;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.modal-content {
+    position: relative;
+    top: -100%;
+    opacity: 0;
+    margin-top: 100px;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 350px;
+    height: 360px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: top 0.5s ease, opacity 0.5s ease;
+    text-align: center;
+}
+
+/* Class saat modal aktif */
+.modal-overlay.show .modal-content {
+    top: 0;
+    opacity: 1;
+    margin-top: 150px;
+}
+
+
+.modal-overlay .modal-content h2 {
+    padding-top: 20px;
+    font-size: 3rem;
+}
+
+
+.modal-overlay .modal-content form {
+    padding-right: 20px;
+}
+
+.modal-overlay .modal-content form button:hover {
+    background-color: #211442;
+}
+
+
+
+/* hero mulai dari sini yah zahran */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/bgcoba.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(30%);
+}
+
+.hero {
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    margin-top: -3rem;
+    position: relative;
+}
+
+.hero .row {
+    display: flex;
+    width: 850px;
+}
+
+.hero .row .content {
+    flex: 1 1 35rem;
+    padding: 1.4rem 7%;
+}
+
+.hero .row .content h1 {
+    padding-top: 7rem;
+    font-size: 4em;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.1;
+}
+
+.hero .row .content h1 span {
+    color: var(--pink);
+}
+
+.hero .row .content .kata {
+    font-size: 1.8rem;
+    color: #826fad;
+    font-weight: 600;
+}
+
+.hero .row .content p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 200;
+}
+
+.hero .row .content .buttons {
+    display: flex;
+    margin-top: 2rem;
+    line-height: 1.1
+}
+
+.hero .row .buttons a {
+    background: #826fad;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 15px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.hero .row .buttons a:hover {
+    background: var(--primary);
+}
+
+/* Segmentasi mulai dari sini yah zahran */
+.layanan,
+.segmentasi,
+.testimoni,
+.templates,
+.kontak {
+    padding: 60px 0;
+    background: #F3F4F6;
+}
+
+.segmentasi .row,
+.testimoni {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.segmentasi .col {
+    flex: 1 1 220px;
+    max-width: 320px;
+}
+
+.segmentasi .segmentasi-title,
+.layanan .layanan-title,
+.layanan-vendor-title,
+.kontak .kontak-title {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.segmentasi .segmentasi-title h2,
+.layanan .layanan-title h2,
+.testimoni .testimoni-title h2,
+.kontak .kontak-title h2 {
+    font-family: 'Chewy', cursive;
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.segmentasi-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--secondary);
+    margin: 15px auto;
+}
+
+.segmentasi .row .age-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.segmentasi .row .age-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.segmentasi .row .age-card .age-card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.segmentasi .row .age-card .age-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.segmentasi .row .age-card:hover .age-card-img img {
+    transform: scale(1.1);
+}
+
+.segmentasi .row .age-card .age-card-body {
+    padding: 25px;
+}
+
+.segmentasi .row .age-card .age-card-body h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* Layanannya mulai dari sini yah zahran */
+.layanan .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.layanan .col {
+    flex: 1 1 250px;
+    max-width: 400px;
+}
+
+.layanan-vendor-title h2 {
+    font-family: 'Chewy', cursive;
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 500;
+    padding-top: 40px;
+}
+
+.layanan-item {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+.layanan-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.layanan-icon {
+    width: 80px;
+    height: 80px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: var(--dark);
+}
+
+.layanan .kalkulasi {
+    flex: 1 1 250px;
+    max-width: 10000px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* testimoni mulai dari sini nihhhhhhhh */
+
+.testimoni .testimoni-title {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.testimoni .testimonial-card {
+    align-items: center;
+    background-color: #F3F4F6;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 15px;
+    max-width: 1000px;
+    height: 300px;
+}
+
+.testimoni .testimonial-card h1 {
+    font-size: 5em;
+    color: var(--pink);
+    padding: 65px 0;
+    text-align: center;
+}
+
+/* Kontak mulai dari sini */
+
+.kontak {
+    padding: 60px 20px;
+}
+
+.kontak .container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+form {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 5rem;
+}
+
+form .form-control,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+form .form-control:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.2rem rgb(84, 65, 128, 0.25);
+}
+
+form button {
+    background-color: var(--primary);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.info-kontak {
+    flex: 1;
+    min-width: 300px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.info-kontak h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.info-item i {
+    font-size: 18px;
+    color: var(--primary);
+    margin-right: 12px;
+    margin-top: 3px;
+}
+
+.info-item h5 {
+    margin: 0;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.sosial {
+    margin-top: 30px;
+}
+
+.sosial a {
+    color: var(--primary);
+    font-size: 20px;
+    margin-right: 15px;
+    transition: 0.2s;
+}
+
+.sosial a:hover {
+    color: var(--pink);
+}
+
+/* .testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+} */
+
+
+/*  */
+
+
+
+.templates h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #1E293B;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card p {
+    padding: 1rem;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.footer {
+    background-color: #0f0722;
+    color: var(--white);
+    padding: 30px;
+    text-align: center;
+}
+
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+
+    .hero .row .hero-img img {
+        width: 85%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html {
+        font-size: 75%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: white;
+        width: 26rem;
+        height: 100vh;
+        transition: 0.4s;
+    }
+
+    .navbar .navbar-nav.active {
+        left: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: #211442;
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 1.7rem;
+    }
+
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.4);
+    }
+
+    .hero .row {
+        display: block;
+        width: 475px;
+    }
+
+    .hero .row .content {
+        text-align: center;
+    }
+
+    .hero .row .content h1 {
+        padding-top: 4rem;
+    }
+
+    .hero .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .hero .row .buttons a {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .segmentasi .segmentasi-title {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .segmentasi .col {
+        flex: 1 1 220px;
+        max-width: 400px;
+    }
+
+    .testimoni .testimonial-card h1 {
+        padding: 37px 0;
+    }
+
+    form,
+    .info-kontak {
+        flex: 100%;
+    }
+
+    form {
+        padding-right: 0rem;
+    }
+
+    .modal-content {
+        height: 340px;
+    }
+
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+    html {
+        font-size: 53%;
+    }
+
+    .hero .row {
+        width: 375px;
+    }
+
+    .layanan .kalkulasi {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .testimoni .testimonial-card h1 {
+        padding: 53px 0;
+    }
+
+}

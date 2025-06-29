@@ -2,10 +2,9 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paket & Vendor</title>
-
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,119 +20,131 @@
     <!-- icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="paket.css">
-    <link rel="stylesheet" href="/navbar.css">
-
+    <link rel="stylesheet" href="paket.css" />
+    <link rel="stylesheet" href="/navbar.css" />
 </head>
 
 <body>
-    <!--------------------------------------- Navbar ---------------------------------------->
+    <!-- Navbar -->
     <div id="navbar-placeholder"></div>
     <script src="/js/script.js"></script>
-    <!-- ---------------------------------------------------------------------------------- -->
+    <!-- Modal Login jika diperlukan -->
 
-
-    <div id="loginModal" class="modal-overlay">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <h2>Login</h2><br>
-            <form>
-                <div class="mb-3">
-                    <input type="text" placeholder="Username" required class="form-control" />
-                </div>
-                <div class="mb-3">
-                    <input type="password" placeholder="Password" required class="form-control" />
-                </div><br>
-
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-
-            </form>
-        </div>
-    </div>
-
+    <!-- SEKSI PAKET -->
     <section id="paket-ultah" class="paket-ultah bg-light">
         <div class="container">
             <div class="paket-title">
                 <h1>Pilih Paket Event Ultah</h1>
                 <p>Sesuaikan pilihan Anda</p>
+                <div id="admin-controls-paket" style="display: none; margin-top: 20px">
+                    <button class="btn btn-success">+ Tambah Paket</button>
+                </div>
+                <!-- ADMIN CONTROL END -->
             </div>
 
-            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 row-cols-1 justify-content-center">
-                <div class="col mt-3 fade-in-up" style="animation-delay: 0.1s;">
+            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 justify-content-center">
+                <div class="col mt-3" style="animation-delay: 0.1s;">
                     <div class="card">
                         <div class="card-body">
-                            <h3>Paket Hemat Anak 5 Tahun</h3>
-                            <p>Untuk 20 tamu | Tema: Kartun | Lokasi: Indoor</p>
-                            <p>Harga: Rp 2.500.000</p>
-                            <button class="btn">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
+                            <h3 class="judulpaket">Paket Hemat Anak 5 Tahun</h3>
+                            <p class="deskripsipaket">Untuk 20 tamu | Tema: Kartun | Lokasi: Indoor</p>
+                            <p class="hargapaket">Harga: Rp 2.500.000</p>
+                            <button class="btn">Pilih Paket</button>
 
-                <div class="col mt-3 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>Paket Standart Remaja</h3>
-                            <p>Untuk 50 tamu | Tema: Glow Party | Lokasi: Indoor</p>
-                            <p>Harga: Rp 6.000.000</p>
-                            <button class="btn">Lihat Detail</button>
+                            <!-- ADMIN CONTROL -->
+                            <div class="admin-actions" style="display: none; margin-top: 10px">
+                                <button class="btn btn-sm btn-warning">Edit</button>
+                                <button class="btn btn-sm btn-danger">Hapus</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="col mt-3 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>Paket Premium Remaja</h3>
-                            <p>Untuk 100 tamu | Tema: Glow Party | Lokasi: Outdoor</p>
-                            <p>Harga: Rp 8.000.000</p>
-                            <button class="btn">Lihat Detail</button>
-                        </div>
-                    </div>
-                </div>
+                <!-- Tambah kartu lainnya sesuai kebutuhan -->
             </div>
         </div>
     </section>
+    <!-- SEKSI VENDOR -->
 
     <section id="paket-vendor" class="paket-vendor bg-light">
         <div class="container">
             <div class="paket-title">
                 <h1>Pilih Paket & Vendor Ulang Tahun</h1>
                 <p>Sesuaikan pilihan Anda</p>
+                <!-- ADMIN CONTROL START -->
+                <div id="admin-controls-vendor" style="display: none; margin-top: 20px">
+                    <button class="btn btn-success">+ Tambah Vendor</button>
+                </div>
+                <!-- ADMIN CONTROL END -->
             </div>
 
-            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 row-cols-1 justify-content-center">
-                <div class="col mt-3 fade-in-up" style="animation-delay: 0.1s;">
+            <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-1 justify-content-center">
+                <div class="col mt-3" style="animation-delay: 0.1s;">
                     <div class="card">
                         <div class="card-body">
-                            <h3>Vendor Dekorasi - BalonArt</h3>
-                            <p>Spesialis dekorasi tema anak & remaja, indoor dan outdoor.</p>
-                            <p>Mulai dari Rp 500.000</p>
-                            <button class="btn">Lihat Profil</button>
-                        </div>
-                    </div>
-                </div>
+                            <h3 class="judulvendor">Vendor Dekorasi - BalonArt</h3>
+                            <p class="deskrisivendor">Spesialis dekorasi tema anak & remaja.</p>
+                            <p class="hargavendor">Mulai dari Rp 500.000</p>
+                            <button class="btn">Pilih Paket Vendor</button>
 
-                <div class="col mt-3 fade-in-up" style="animation-delay: 0.2s;">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>Vendor Katering - MakanMakan</h3>
-                            <p>Katering halal & ramah anak. Menu fleksibel.</p>
-                            <p>Mulai dari Rp 30.000/porsi</p>
-                            <button class="btn">Lihat Profil</button>
+                            <!-- ADMIN CONTROL -->
+                            <div class="admin-actions" style="display: none; margin-top: 10px">
+                                <button class="btn btn-sm btn-warning">Edit</button>
+                                <button class="btn btn-sm btn-danger">Hapus</button>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!-- Vendor lainnya -->
             </div>
         </div>
     </section>
-
     <footer class="footer">
         <p>&copy; 2025 WishWhiz. All rights reserved.</p>
     </footer>
+    <!-- Script untuk tampilkan kontrol jika admin -->
+
+    <div id="addPaketModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Tambah Paket Baru</h2>
+            <form id="addPaketForm">
+                <label for="paketJudul">Judul Paket:</label>
+                <input type="text" id="paketJudul" name="judulpaket" required>
+
+                <label for="paketDeskripsi">Deskripsi:</label>
+                <textarea id="paketDeskripsi" name="deskripsipaket" required></textarea>
+
+                <label for="paketHarga">Harga:</label>
+                <input type="number" id="paketHarga" name="hargapaket" required>
+
+                <button type="submit">Simpan Paket</button>
+                <div id="paketErrorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="addVendorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Tambah Vendor Baru</h2>
+            <form id="addVendorForm">
+                <label for="vendorJudul">Judul Vendor:</label>
+                <input type="text" id="vendorJudul" name="judulvendor" required>
+
+                <label for="vendorDeskripsi">Deskripsi:</label>
+                <textarea id="vendorDeskripsi" name="deskrisivendor" required></textarea>
+
+                <label for="vendorHarga">Harga Mulai:</label>
+                <input type="text" id="vendorHarga" name="hargavendor" required>
+
+                <button type="submit">Simpan Vendor</button>
+                <div id="vendorErrorMessage" class="error-message"></div>
+            </form>
+        </div>
+    </div>
 
 
-    <script src="/js/script.js"></script>
-
+    <script src="paket_vendor_admin.js"></script>
 </body>
 
 </html>
