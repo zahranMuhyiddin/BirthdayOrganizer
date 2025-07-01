@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem("token"); // Ini harus diisi saat login
 
     // Elemen HTML (pastikan ID dan kelas ini sesuai di HTML Anda)
+    const loginModal = document.getElementById("loginModal");
+
     const adminControlsPaket = document.getElementById("admin-controls-paket");
     const adminControlsVendor = document.getElementById("admin-controls-vendor");
     const addPaketButton = adminControlsPaket ? adminControlsPaket.querySelector(".btn-success") : null;
@@ -453,4 +455,38 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     } // End of if (role === "admin") for edit/delete listeners
+
+    // Event listener delegasi untuk tombol "Pilih Paket"
+    if (paketContainer) { // Pastikan paketContainer ada
+        paketContainer.addEventListener('click', (event) => {
+            const target = event.target;
+            // Memastikan yang diklik adalah tombol dengan kelas 'btn' dan teks 'Pilih Paket'
+            if (target.classList.contains('btn') && target.textContent === 'Pilih Paket') {
+                if (loginModal) {
+                    loginModal.style.display = 'flex'; // Tampilkan modal
+                    setTimeout(() => {
+                        loginModal.classList.add('show'); // Tambah kelas 'show' untuk transisi
+                    }, 10);
+                }
+            }
+        });
+    }
+
+    // Event listener delegasi untuk tombol "Pilih Paket Vendor"
+    if (vendorContainer) { // Pastikan vendorContainer ada
+        vendorContainer.addEventListener('click', (event) => {
+            const target = event.target;
+            // Memastikan yang diklik adalah tombol dengan kelas 'btn' dan teks 'Pilih Paket Vendor'
+            if (target.classList.contains('btn') && target.textContent === 'Pilih Paket Vendor') {
+                if (loginModal) {
+                    loginModal.style.display = 'flex'; // Tampilkan modal
+                    setTimeout(() => {
+                        loginModal.classList.add('show'); // Tambah kelas 'show' untuk transisi
+                    }, 10);
+                }
+            }
+        });
+    }
+
+
 });
