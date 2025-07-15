@@ -346,6 +346,93 @@ form button {
     padding: 25px;
 }
 
+/* Pastikan Anda memiliki gaya CSS ini di file CSS Anda */
+
+.modal-overlay {
+    display: none; /* Penting: Modal disembunyikan secara default */
+    position: fixed;
+    z-index: 1050; /* Pastikan lebih tinggi dari elemen lain */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    display: flex; /* Menggunakan flex lagi saat 'show' */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    transform: translateY(-50px);
+    transition: transform 0.4s ease-in-out;
+}
+
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Gaya tambahan untuk modal detail */
+.modal-description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.modal-price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.modal-action-btn {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #544180; /* Warna primary Anda */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.modal-action-btn:hover {
+    background-color: #4a376f;
+}
+
 
 .footer {
     background-color: #0f0722;

@@ -22,14 +22,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="paket.css">
-    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/User/Customer/navbar.css">
 
 </head>
 
 <body>
     <!--------------------------------------- Navbar ---------------------------------------->
     <div id="navbar-placeholder"></div>
-    <script src="/js/script.js"></script>
+    <script src="/User/Customer/js/script.js"></script>
     <!-- ---------------------------------------------------------------------------------- -->
 
     <section id="paket-ultah" class="paket-ultah bg-light">
@@ -75,6 +75,16 @@
             </div>
         </div>
     </section>
+
+    <div id="packageDetailModal" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-button" id="closePackageDetailModal">&times;</span>
+            <h2 id="packageDetailTitle">Detail Pilihan</h2>
+            <p id="packageDetailDescription" class="modal-description"></p>
+            <p id="packageDetailPrice" class="modal-price"></p>
+            <button id="goToPaymentButton" class="btn btn-primary modal-action-btn">Lanjut ke Pembayaran</button>
+        </div>
+    </div>
 
     <footer class="footer">
         <p>&copy; 2025 WishWhiz. All rights reserved.</p>

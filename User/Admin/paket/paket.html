@@ -143,6 +143,16 @@
         </div>
     </div>
 
+    <div id="packageDetailModal" class="modal-overlay">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-button" id="closePackageDetailModal">&times;</span>
+            <h2 id="packageDetailTitle">Detail Pilihan</h2>
+            <p id="packageDetailDescription" class="modal-description"></p>
+            <p id="packageDetailPrice" class="modal-price"></p>
+            <button id="goToPaymentButton" class="btn btn-primary modal-action-btn">Lanjut ke Pembayaran</button>
+        </div>
+    </div>
+
     <script src="paket_vendor_admin.js"></script>
 </body>
 

@@ -39,13 +39,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const vendorModalTitle = addVendorModal ? addVendorModal.querySelector("h2") : null;
     const vendorSubmitButton = addVendorForm ? addVendorForm.querySelector("button[type='submit']") : null;
 
+    const packageDetailModal = document.getElementById("packageDetailModal");
+    const closePackageDetailModalBtn = document.getElementById("closePackageDetailModal");
+    const packageDetailTitle = document.getElementById("packageDetailTitle");
+    const packageDetailDescription = document.getElementById("packageDetailDescription");
+    const packageDetailPrice = document.getElementById("packageDetailPrice");
+    const goToPaymentButton = document.getElementById("goToPaymentButton");
+
     // --- Fungsi Bantuan ---
     // Fungsi untuk membuat elemen kartu paket
     function createPaketCard(paket) {
         const col = document.createElement("div");
-        col.className = "col mt-3"; // Sesuaikan kelas Bootstrap Anda jika berbeda
-        // Jika Anda memiliki animasi atau efek loading, tambahkan di sini
-        // col.style.animationDelay = "0.1s";
+        col.className = "col mt-3";
 
         col.innerHTML = `
             <div class="card">
@@ -53,8 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3 class="judulpaket">${paket.judulpaket}</h3>
                     <p class="deskripsipaket">${paket.deskripsipaket}</p>
                     <p class="hargapaket">Harga: Rp ${formatRupiah(paket.hargapaket)}</p>
-                    <button class="btn">Pilih Paket</button>
-                    </div>
+                    <button class="btn btn-pilih-paket" data-id="${paket._id}" data-type="paket">Pilih Paket</button>
+                    <div class="admin-actions" style="display: ${role === 'admin' ? 'block' : 'none'}; margin-top: 10px">
+                        <button class="btn btn-sm btn-warning" data-id="${paket._id}" data-type="paket">Edit</button> <button class="btn btn-sm btn-danger" data-id="${paket._id}" data-type="paket">Hapus</button> </div>
+                </div>
             </div>
         `;
         return col;
@@ -63,8 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Fungsi untuk membuat elemen kartu vendor
     function createVendorCard(vendor) {
         const col = document.createElement("div");
-        col.className = "col mt-3"; // Sesuaikan kelas Bootstrap Anda jika berbeda
-        // col.style.animationDelay = "0.1s";
+        col.className = "col mt-3";
 
         col.innerHTML = `
             <div class="card">
@@ -72,8 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h3 class="judulvendor">${vendor.judulvendor}</h3>
                     <p class="deskrisivendor">${vendor.deskripsivendor}</p>
                     <p class="hargavendor"> Harga mulai dari : Rp ${formatRupiah(vendor.hargavendor)}</p>
-                    <button class="btn">Pilih Paket Vendor</button>
-                    </div>
+                    <button class="btn btn-pilih-vendor" data-id="${vendor._id}" data-type="vendor">Pilih Paket Vendor</button>
+                    <div class="admin-actions" style="display: ${role === 'admin' ? 'block' : 'none'}; margin-top: 10px">
+                        <button class="btn btn-sm btn-warning" data-id="${vendor._id}" data-type="vendor">Edit</button> <button class="btn btn-sm btn-danger" data-id="${vendor._id}" data-type="vendor">Hapus</button> </div>
+                </div>
             </div>
         `;
         return col;
@@ -273,6 +281,145 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     } // End of if (role === "admin")
+
+    // --- FUNGSI BARU: EVENT LISTENER UNTUK TOMBOL "PILIH PAKET" DAN "PILIH PAKET VENDOR" ---
+    // Event listener delegasi untuk tombol "Pilih Paket"
+    if (paketContainer) {
+        paketContainer.addEventListener('click', async (event) => {
+            const target = event.target;
+            // Pastikan yang diklik adalah tombol dengan kelas 'btn-pilih-paket'
+            if (target.classList.contains('btn-pilih-paket') && target.dataset.type === 'paket') {
+                const paketId = target.dataset.id; // Ambil ID dari data-id atribut
+
+                try {
+                    // Ambil detail paket dari API menggunakan ID
+                    const response = await fetch(`${BASE_API_URL}/paket/${paketId}`);
+                    if (!response.ok) {
+                        throw new Error("Gagal mengambil detail paket.");
+                    }
+                    const paket = await response.json();
+
+                    // Isi modal dengan detail paket
+                    packageDetailTitle.textContent = paket.judulpaket;
+                    packageDetailDescription.textContent = paket.deskripsipaket;
+                    packageDetailPrice.textContent = `Harga: Rp ${formatRupiah(paket.hargapaket)}`;
+
+                    // Simpan ID dan tipe item di tombol "Lanjut ke Pembayaran"
+                    goToPaymentButton.dataset.itemId = paket._id;
+                    goToPaymentButton.dataset.itemType = 'paket';
+
+                    // Tampilkan modal detail paket
+                    if (packageDetailModal) {
+                        packageDetailModal.style.display = 'flex'; // Set display ke flex
+                        setTimeout(() => {
+                            packageDetailModal.classList.add('show'); // Tambah kelas 'show' untuk transisi
+                        }, 10);
+                    }
+
+                } catch (error) {
+                    console.error("Error fetching package details:", error);
+                    alert("Gagal memuat detail paket: " + error.message);
+                }
+            }
+        });
+    }
+
+    // Event listener delegasi untuk tombol "Pilih Paket Vendor"
+    if (vendorContainer) {
+        vendorContainer.addEventListener('click', async (event) => {
+            const target = event.target;
+            // Pastikan yang diklik adalah tombol dengan kelas 'btn-pilih-vendor'
+            if (target.classList.contains('btn-pilih-vendor') && target.dataset.type === 'vendor') {
+                const vendorId = target.dataset.id; // Ambil ID dari data-id atribut
+
+                try {
+                    // Ambil detail vendor dari API menggunakan ID
+                    const response = await fetch(`${BASE_API_URL}/vendor/${vendorId}`);
+                    if (!response.ok) {
+                        throw new Error("Gagal mengambil detail vendor.");
+                    }
+                    const vendor = await response.json();
+
+                    // Isi modal dengan detail vendor
+                    packageDetailTitle.textContent = vendor.judulvendor;
+                    packageDetailDescription.textContent = vendor.deskripsivendor;
+                    packageDetailPrice.textContent = `Harga mulai dari: Rp ${formatRupiah(vendor.hargavendor)}`;
+
+                    // Simpan ID dan tipe item di tombol "Lanjut ke Pembayaran"
+                    goToPaymentButton.dataset.itemId = vendor._id;
+                    goToPaymentButton.dataset.itemType = 'vendor';
+
+                    // Tampilkan modal detail vendor
+                    if (packageDetailModal) {
+                        packageDetailModal.style.display = 'flex';
+                        setTimeout(() => {
+                            packageDetailModal.classList.add('show');
+                        }, 10);
+                    }
+
+                } catch (error) {
+                    console.error("Error fetching vendor details:", error);
+                    alert("Gagal memuat detail vendor: " + error.message);
+                }
+            }
+        });
+    }
+
+    // --- FUNGSI BARU: EVENT LISTENER UNTUK MENUTUP MODAL DETAIL PAKET/VENDOR ---
+    // Event listener untuk tombol close di dalam modal detail
+    if (closePackageDetailModalBtn) {
+        closePackageDetailModalBtn.addEventListener('click', () => {
+            if (packageDetailModal) {
+                packageDetailModal.classList.remove('show'); // Hapus kelas 'show' untuk transisi fade-out
+                setTimeout(() => {
+                    packageDetailModal.style.display = 'none'; // Sembunyikan setelah transisi
+                }, 400); // Sesuaikan dengan durasi transisi CSS Anda
+            }
+        });
+    }
+
+    // Event listener untuk menutup modal detail ketika mengklik area overlay (di luar konten modal)
+    if (packageDetailModal) {
+        packageDetailModal.addEventListener('click', (event) => {
+            // Hanya tutup jika target klik adalah modal-overlay itu sendiri, bukan modal-content
+            if (event.target === packageDetailModal) {
+                packageDetailModal.classList.remove('show');
+                setTimeout(() => {
+                    packageDetailModal.style.display = 'none';
+                }, 400);
+            }
+        });
+    }
+
+    // --- FUNGSI BARU: EVENT LISTENER UNTUK TOMBOL "LANJUT KE PEMBAYARAN" ---
+    if (goToPaymentButton) {
+        goToPaymentButton.addEventListener('click', () => {
+            const itemId = goToPaymentButton.dataset.itemId;
+            const itemType = goToPaymentButton.dataset.itemType;
+
+            // Sebelum redirect, Anda mungkin ingin memastikan user sudah login.
+            // Jika belum login, Anda bisa menampilkan modal login di sini, atau redirect ke halaman login.
+            // Contoh sederhana:
+            // if (!token) {
+            //     alert("Anda harus login untuk melanjutkan ke pembayaran.");
+            //     // Tampilkan modal login atau redirect ke halaman login
+            //     // const loginModal = document.getElementById("loginModal"); // pastikan loginModal bisa diakses
+            //     // if (loginModal) {
+            //     //     loginModal.style.display = 'flex';
+            //     //     setTimeout(() => { loginModal.classList.add('show'); }, 10);
+            //     // }
+            //     return;
+            // }
+
+            if (itemId && itemType) {
+                // Redirect ke halaman pembayaran, passing ID dan tipe item sebagai query parameter
+                // Contoh URL: /pembayaran.html?type=paket&id=65a3b9d0e2f1a4c5b6d7e8f0
+                window.location.href = `/pembayaran.html?type=${itemType}&id=${itemId}`;
+            } else {
+                alert("Tidak ada item yang dipilih untuk pembayaran.");
+            }
+        });
+    }
 
     // --- Fungsi untuk Mengambil Data dari Backend dan Menampilkan ---
     // Fungsi ini dipanggil untuk semua user (admin atau bukan), karena menampilkan data paket/vendor

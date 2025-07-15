@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran - [Nama Situs Anda]</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Gaya dasar untuk halaman pembayaran, bisa disesuaikan */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bayar {
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .logo-atas {
+            font-size: 2rem;
+            font-weight: 600;
+            color: white;
+            font-style: italic;
+            padding-top: 1rem;
+        }
+
+        .payment-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 50px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .payment-form-section,
+        .order-summary-section {
+            padding: 30px;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .payment-form-section {
+            border-right: 1px solid #eee;
+        }
+
+        h1,
+        h2 {
+            color: var(--primary, #544180);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-pay {
+            background-color: var(--primary, #544180);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-pay:hover {
+            background-color: #6a539c;
+        }
+
+        .order-summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .order-summary-total {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .security-info {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .payment-method-option {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .payment-method-option:hover {
+            border-color: var(--primary, #544180);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .payment-method-option.selected {
+            border-color: var(--primary, #544180);
+            box-shadow: 0 0 0 2px rgba(84, 65, 128, 0.25);
+            background-color: #f9f9ff;
+        }
+
+        .payment-method-option img {
+            width: 40px;
+            /* Ukuran ikon GoPay/DANA */
+            height: auto;
+        }
+
+        #paymentDetails {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        #paymentDetails p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            word-break: break-all;
+            /* Agar nomor tidak memanjang keluar */
+        }
+
+        #paymentDetails .copy-button {
+            background-color: #28a745;
+            /* Warna hijau untuk copy */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        #paymentDetails .copy-button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .payment-container {
+                flex-direction: column;
+            }
+
+            .payment-form-section {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="padding: 0.2rem 7%; background: rgba(88, 59, 155, 0.7);">
+        <h2 class="logo-atas">Wish <span>Whiz</span></h2>
+    </header>
+
+    <section class="bayar">
+        <div class="payment-container">
+            <div class="payment-form-section">
+                <h1>Selesaikan Pembayaran</h1>
+
+                <h2>Pilih Metode Pembayaran</h2>
+                <div class="payment-methods">
+                    <div class="payment-method-option" data-method="gopay">
+                        <input type="radio" id="gopay" name="payment_method" value="gopay" hidden>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Gopay_logo.svg/1200px-Gopay_logo.svg.png"
+                            alt="GoPay">
+                        <label for="gopay">GoPay</label>
+                    </div>
+                    <div class="payment-method-option" data-method="dana">
+                        <input type="radio" id="dana" name="payment_method" value="dana" hidden>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/DANA_Logo.png/800px-DANA_Logo.png"
+                            alt="DANA">
+                        <label for="dana">DANA</label>
+                    </div>
+                </div>
+
+                <div id="paymentDetails" style="display: none;">
+                    <h2>Detail Pembayaran Anda</h2>
+                    <p>Silakan transfer ke akun pembayaran berikut:</p>
+                    <p><strong>Penyedia:</strong> <span id="paymentProvider"></span></p>
+                    <p><strong>Nama Akun:</strong> <span id="accountName"></span></p>
+                    <p><strong>Nomor Akun/ID:</strong> <span id="accountNumber"></span> <button class="copy-button"
+                            onclick="copyToClipboard('accountNumber')">Salin</button></p>
+                    <p><strong>Jumlah Pembayaran:</strong> <span id="paymentAmount"></span></p>
+                    <p style="font-size: 0.9em; color: #777;">*Pastikan jumlah transfer sesuai agar pesanan Anda segera
+                        diproses.</p>
+                </div>
+
+                <button type="button" class="btn-pay" id="confirmPaymentButton" disabled>Konfirmasi Pembayaran</button>
+                <p class="security-info"><i class="fas fa-lock"></i> Transaksi Anda aman dan terenkripsi.</p>
+            </div>
+
+            <div class="order-summary-section">
+                <h2>Ringkasan Pesanan</h2>
+                <div class="order-summary-items" id="orderSummaryItems">
+                    <div class="order-summary-item">
+                        <span>Paket Hemat Anak 5 Tahun</span>
+                        <span>Rp 2.500.000</span>
+                    </div>
+                    <div class="order-summary-item">
+                        <span>Vendor Dekorasi - BalonArt</span>
+                        <span>Rp 500.000</span>
+                    </div>
+                </div>
+                <div class="order-summary-total">
+                    <span>Total</span>
+                    <span id="finalTotalAmount">Rp 3.000.000</span>
+                </div>
+                <p style="text-align: center; margin-top: 20px;">
+                    <a href="#" style="color: var(--primary, #544180); text-decoration: none;">&larr; Kembali ke
+                        Keranjang</a>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 WishWhiz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dummy data for demonstration. In a real app, this would come from your backend based on the selected package.
+        const packagePaymentInfo = {
+            "paket-hemat-anak-5-tahun": { // Ini bisa menjadi ID unik paket dari database Anda
+                gopay: {
+                    provider: "GoPay",
+                    accountName: "WishWhiz Event Organizer",
+                    accountNumber: "081234567890"
+                },
+                dana: {
+                    provider: "DANA",
+                    accountName: "WishWhiz EO",
+                    accountNumber: "089876543210"
+                }
+            },
+            // Tambahkan data untuk paket lainnya
+            // "id-paket-lain": {
+            //     gopay: { ... },
+            //     dana: { ... }
+            // }
+        };
+
+        // Asumsi Anda telah mendapatkan ID paket yang dipilih, misalnya dari URL parameter atau localStorage
+        // Untuk demo, kita asumsikan ID paket adalah "paket-hemat-anak-5-tahun"
+        const selectedPackageId = "paket-hemat-anak-5-tahun"; // Ganti ini dengan cara Anda mendapatkan ID paket
+        const selectedPackageDetails = packagePaymentInfo[selectedPackageId];
+
+        const paymentMethodOptions = document.querySelectorAll('.payment-method-option');
+        const paymentDetailsDiv = document.getElementById('paymentDetails');
+        const paymentProviderSpan = document.getElementById('paymentProvider');
+        const accountNameSpan = document.getElementById('accountName');
+        const accountNumberSpan = document.getElementById('accountNumber');
+        const finalTotalAmountSpan = document.getElementById('finalTotalAmount'); // Mengambil total dari ringkasan pesanan
+        const confirmPaymentButton = document.getElementById('confirmPaymentButton');
+
+        paymentMethodOptions.forEach(option => {
+            option.addEventListener('click', function () {
+                // Hapus kelas 'selected' dari semua opsi
+                paymentMethodOptions.forEach(opt => opt.classList.remove('selected'));
+                // Tambahkan kelas 'selected' ke opsi yang diklik
+                this.classList.add('selected');
+
+                // Tandai radio button internal sebagai checked
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) {
+                    radio.checked = true;
+                }
+
+                const selectedMethod = this.dataset.method;
+                if (selectedPackageDetails && selectedPackageDetails[selectedMethod]) {
+                    const paymentInfo = selectedPackageDetails[selectedMethod];
+                    paymentProviderSpan.textContent = paymentInfo.provider;
+                    accountNameSpan.textContent = paymentInfo.accountName;
+                    accountNumberSpan.textContent = paymentInfo.accountNumber;
+
+                    // Ambil jumlah total dari elemen ringkasan pesanan
+                    paymentAmountSpan.textContent = finalTotalAmountSpan.textContent;
+
+                    paymentDetailsDiv.style.display = 'block';
+                    confirmPaymentButton.disabled = false; // Aktifkan tombol konfirmasi
+                } else {
+                    paymentDetailsDiv.style.display = 'none';
+                    confirmPaymentButton.disabled = true;
+                }
+            });
+        });
+
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const textToCopy = element.textContent;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Nomor akun berhasil disalin!');
+            }).catch(err => {
+                console.error('Gagal menyalin teks: ', err);
+                alert('Gagal menyalin nomor akun.');
+            });
+        }
+
+        // Event listener untuk tombol konfirmasi pembayaran (ini akan menjadi langkah selanjutnya)
+        confirmPaymentButton.addEventListener('click', () => {
+            alert('Anda telah mengkonfirmasi pembayaran. Silakan lanjutkan proses transfer.');
+            // Di sini Anda akan menambahkan logika untuk mengarahkan pengguna ke halaman instruksi transfer
+            // atau mengubah status pesanan di backend.
+        });
+
+    </script>
+</body>
+
+</html>

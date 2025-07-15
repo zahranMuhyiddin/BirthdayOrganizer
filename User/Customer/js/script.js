@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 }); // End of DOMContentLoaded
 
-fetch("/navbar.html")
+fetch("/User/Customer/navbar.html")
     .then(res => res.text())
     .then(data => {
         document.getElementById("navbar-placeholder").innerHTML = data;

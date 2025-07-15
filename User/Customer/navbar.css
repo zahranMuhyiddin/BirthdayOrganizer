@@ -58,9 +58,9 @@
     margin: 0 0.5rem;
 }
 
-.navbar .navbar-extra .login {
-    background-color: white;
-    color: var(--primary);
+.navbar .navbar-extra .logoutBtn {
+    background-color: red;
+    color: white;
     padding: 0.7rem;
     border-radius: 10px;
 }
@@ -69,32 +69,11 @@
     color: var(--primary);
 }
 
-.navbar .navbar-extra .login:hover {
-    color: white;
-    background-color: var(--primary);
-}
-
-.navbar .nav-right a {
-    font-size: 1.2rem;
-    color: white;
-    margin: 0 0.5rem;
-}
-
-.navbar .nav-right .logoutBtn {
-    background-color: red;
-    color: white;
-    padding: 0.7rem;
-    border-radius: 10px;
-}
-
-.navbar .nav-right a:hover {
-    color: var(--primary);
-}
-
-.navbar .nav-right .logoutBtn:hover {
+.navbar .navbar-extra .logoutBtn:hover {
     color: red;
     background-color: white;
 }
+
 
 #hamburger-menu {
     color: white;

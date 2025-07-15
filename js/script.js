@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
         "/",                 // Halaman utama (biasanya mengarah ke index.html di root)
         "/index.html",       // Jika root Anda juga bisa diakses via /index.html
         "/paket/paket.html", // Ini adalah halaman Paket & Vendor Anda
+        "/Desain/desain.html",
         "/daftar/daftar.html", // Halaman pendaftaran
         "/tentang/tentangkami.html", // Jika ada halaman tentang kami di folder 'tentang'
         // Tambahkan path lengkap untuk halaman lain yang boleh diakses tanpa login
@@ -103,7 +104,10 @@ fetch("/navbar.html")
                     alert('Login berhasil! Selamat datang, ' + result.user.username);
                     if (result.user.role === 'admin') {
                         window.location.href = '/User/Admin/index.html';
-                    } else {
+                    } else if (result.user.role === 'user') {
+                        window.location.href = '/User/Customer/index.html';
+                    }
+                    else {
                         window.location.href = '/';
                     }
 
