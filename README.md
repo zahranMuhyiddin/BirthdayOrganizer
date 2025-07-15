@@ -1,12 +1,12 @@
 # Nama Proyek Anda
 
-Sebuah deskripsi singkat tentang proyek Anda.
+BirthdayOrganizer aplikasi berbasis website
 
 ## Demo Video
 
 Lihat demo fungsionalitas aplikasi kami di bawah ini:
 
-[![Tonton Demo Website BirthdayOrganizer](http://img.youtube.com/vi/2/sddefault.jpg)](https://www.youtube.com/watch?v=B6nx0AGRxWw)
+[![Tonton Demo Website BirthdayOrganizer](/img/thumbnail.jpg)](https://www.youtube.com/watch?v=B6nx0AGRxWw)
 
 Jika Anda mengalami masalah saat melihat video, Anda bisa langsung mengunjungi tautan ini: [Demo Website BirthdayOrganizer di YouTube](https://www.youtube.com/watch?v=B6nx0AGRxWw).
 
