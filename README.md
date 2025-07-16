@@ -1,14 +1,27 @@
 # BirthdayOrganizer aplikasi berbasis website
-    Aplikasi ini bernama WishWhiz, WishWhiz adalah sebuah platform online yang dirancang untuk memudahkan siapa saja dalam merencanakan acara ulang tahun. Melalui WishWhiz, pengguna dapat dengan mudah memilih berbagai macam paket perayaan ulang tahun mulai dari paket sederhana hingga paket premium yang lengkap dengan dekorasi, makanan, hiburan, dan dokumentasi. Selain itu, platform ini juga menyediakan akses langsung ke berbagai vendor terpercaya, seperti dekorator, katering, fotografer, hingga penyedia acara hiburan, sehingga pengguna tidak perlu repot mencari dan menghubungi satu per satu secara manual. 
+    Aplikasi ini bernama WishWhiz, WishWhiz adalah sebuah platform online yang dirancang untuk memudahkan
+siapa saja dalam merencanakan acara ulang tahun. Melalui WishWhiz, pengguna dapat dengan mudah memilih berbagai
+macam paket perayaan ulang tahun mulai dari paket sederhana hingga paket premium yang lengkap dengan dekorasi,
+makanan, hiburan, dan dokumentasi. Selain itu, platform ini juga menyediakan akses langsung ke berbagai vendor
+terpercaya, seperti dekorator, katering, fotografer, hingga penyedia acara hiburan, sehingga pengguna tidak perlu
+repot mencari dan menghubungi satu per satu secara manual. 
 
-    Target pasar nya sendiri meliputi: orang tua dengan anak kecil contohnya keluarga yang ingin mengadakan pesta ulang tahun anak dengan tema menarik lalu pasangan muda dan individu ingin merayakan ulang tahun pasangan, teman, atau diri sendiri dengan acara yang romantis. Dan terakhir remaja dan dewasa usia 15-25 tahun yang ingin pesta ulang tahun kekinian. 
+    Target pasar nya sendiri meliputi: orang tua dengan anak kecil contohnya keluarga yang ingin mengadakan pesta
+    ulang tahun anak dengan tema menarik lalu pasangan muda dan individu ingin merayakan ulang tahun pasangan,
+    teman, atau diri sendiri dengan acara yang romantis. Dan terakhir remaja dan dewasa usia 15-25 tahun yang
+    ingin pesta ulang tahun kekinian. 
 
     Beberapa solusi yang di tawarkan produk ini: 
-    1. Perencanaan Lengkap: Menyediakan jasa perencanaan acara dari awal hingga akhir, termasuk konsep tema, dekorasi, hiburan, dan logistik.
-    2. Kustomisasi Tema: Menawarkan ide-ide kreatif dan tema yang dipersonalisasi sesuai keinginan klien, seperti tema karakter, vintage, atau modern.   
-    3. Manajemen Vendor: Mengurus semua koordinasi dengan vendor, memastikan semua berjalan lancar tanpa melibatkan klien secara berlebih  
-    4. Paket Sesuai Anggaran: Menyediakan paket acara yang fleksibel, mulai dari hemat hingga premium, dengan transparansi biaya.   
-    5. Layanan All-in-One: Menyediakan solusi lengkap seperti katering, dekorasi, undangan digital, hiburan (badut, sulap, musik), dan dokumentasi (foto/video).
+    1. Perencanaan Lengkap: Menyediakan jasa perencanaan acara dari awal hingga akhir, termasuk konsep tema,
+       dekorasi, hiburan, dan logistik.
+    2. Kustomisasi Tema: Menawarkan ide-ide kreatif dan tema yang dipersonalisasi sesuai keinginan klien, seperti
+       tema karakter, vintage, atau modern.   
+    3. Manajemen Vendor: Mengurus semua koordinasi dengan vendor, memastikan semua berjalan lancar tanpa melibatkan
+       klien secara berlebih  
+    4. Paket Sesuai Anggaran: Menyediakan paket acara yang fleksibel, mulai dari hemat hingga premium, dengan
+       transparansi biaya.   
+    5. Layanan All-in-One: Menyediakan solusi lengkap seperti katering, dekorasi, undangan digital, hiburan
+       (badut, sulap, musik), dan dokumentasi (foto/video).
 
 #   Nama anggota kelompok beserta peran dalam project ini
     1. Zahran Muyyidin  menangani bagian Back End dan Arsitektur Aplikasi Web.
