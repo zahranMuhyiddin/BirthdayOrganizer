@@ -1,10 +1,10 @@
 # BirthdayOrganizer aplikasi berbasis website
-    Aplikasi ini bernama WishWhiz, WishWhiz adalah sebuah platform online yang dirancang untuk memudahkan
-siapa saja dalam merencanakan acara ulang tahun. Melalui WishWhiz, pengguna dapat dengan mudah memilih berbagai
-macam paket perayaan ulang tahun mulai dari paket sederhana hingga paket premium yang lengkap dengan dekorasi,
-makanan, hiburan, dan dokumentasi. Selain itu, platform ini juga menyediakan akses langsung ke berbagai vendor
-terpercaya, seperti dekorator, katering, fotografer, hingga penyedia acara hiburan, sehingga pengguna tidak perlu
-repot mencari dan menghubungi satu per satu secara manual. 
+Aplikasi ini bernama WishWhiz, WishWhiz adalah sebuah platform online yang dirancang untuk memudahkan siapa saja
+dalam merencanakan acara ulang tahun. Melalui WishWhiz, pengguna dapat dengan mudah memilih berbagai macam paket
+perayaan ulang tahun mulai dari paket sederhana hingga paket premium yang lengkap dengan dekorasi, makanan, hiburan,
+dan dokumentasi. Selain itu, platform ini juga menyediakan akses langsung ke berbagai vendor terpercaya, seperti
+dekorator, katering, fotografer, hingga penyedia acara hiburan, sehingga pengguna tidak perlu repot mencari dan
+menghubungi satu per satu secara manual. 
 
     Target pasar nya sendiri meliputi: orang tua dengan anak kecil contohnya keluarga yang ingin mengadakan pesta
     ulang tahun anak dengan tema menarik lalu pasangan muda dan individu ingin merayakan ulang tahun pasangan,
